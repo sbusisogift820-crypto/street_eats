@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- STREET EATS TITLE -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="STREET EATS"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- SLOGAN -->
+    <TextView
+        android:id="@+id/txtSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Discover your Dish"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+    <!-- SEARCH -->
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Discover your favourite meal"
+        android:inputType="text"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSlogan" />
+
+    <!-- IMAGE 1 -->
+    <ImageView
+        android:id="@+id/imgCategory1"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Pholas restaurant"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rest1"
+        app:layout_constraintEnd_toStartOf="@id/imgCategory2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch" />
+
+    <!-- IMAGE 2 -->
+    <ImageView
+        android:id="@+id/imgCategory2"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Tashas restaurant"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rest1"
+        app:layout_constraintEnd_toStartOf="@id/imgCategory3"
+        app:layout_constraintStart_toEndOf="@id/imgCategory1"
+        app:layout_constraintTop_toTopOf="@id/imgCategory1" />
+
+    <!-- IMAGE 3 -->
+    <ImageView
+        android:id="@+id/imgCategory3"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="Mamzo's restaurant"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rest1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgCategory2"
+        app:layout_constraintTop_toTopOf="@id/imgCategory1" />
+
+    <!-- RESTAURANT 1 -->
+    <TextView
+        android:id="@+id/txtResturant1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Pholas"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imgCategory1"
+        app:layout_constraintStart_toStartOf="@id/imgCategory1"
+        app:layout_constraintTop_toBottomOf="@id/imgCategory1" />
+
+    <!-- RESTAURANT 2 -->
+    <TextView
+        android:id="@+id/txtResturant2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Tashas"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imgCategory2"
+        app:layout_constraintStart_toStartOf="@id/imgCategory2"
+        app:layout_constraintTop_toBottomOf="@id/imgCategory2" />
+
+    <!-- RESTAURANT 3 -->
+    <TextView
+        android:id="@+id/txtResturant3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Mamzo's"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imgCategory3"
+        app:layout_constraintStart_toStartOf="@id/imgCategory3"
+        app:layout_constraintTop_toBottomOf="@id/imgCategory3" />
+
+    <!-- BOTTOM NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

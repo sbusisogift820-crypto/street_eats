@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ExploreActivity">
+
+    <!-- EXPLORE TITLE -->
+    <TextView
+        android:id="@+id/txtExploreTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Explore"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- SEARCH -->
+    <EditText
+        android:id="@+id/edtExploreSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Search restaurants or food"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtExploreTitle" />
+
+    <!-- CATEGORY TITLE -->
+    <TextView
+        android:id="@+id/txtCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="What are you craving?"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtExploreSearch" />
+
+    <!-- BURGERS -->
+    <Button
+        android:id="@+id/btnBurgers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="Burgers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtCategoryTitle" />
+
+    <!-- PIZZA -->
+    <Button
+        android:id="@+id/btnPizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Pizza"
+        app:layout_constraintStart_toEndOf="@id/btnBurgers"
+        app:layout_constraintTop_toTopOf="@id/btnBurgers" />
+
+    <!-- SUSHI -->
+    <Button
+        android:id="@+id/btnSushi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Sushi"
+        app:layout_constraintStart_toEndOf="@id/btnPizza"
+        app:layout_constraintTop_toTopOf="@id/btnBurgers" />
+
+    <!-- RESTAURANTS TITLE -->
+    <TextView
+        android:id="@+id/txtRestaurantsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Popular Restaurants"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBurgers" />
+
+    <!-- RESTAURANT 1 IMAGE -->
+    <ImageView
+        android:id="@+id/imgRestaurant1"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Pholas restaurant"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rest1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRestaurantsTitle" />
+
+    <!-- RESTAURANT 1 NAME -->
+    <TextView
+        android:id="@+id/txtRestaurant1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Pholas"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgRestaurant1"
+        app:layout_constraintTop_toTopOf="@id/imgRestaurant1" />
+
+    <!-- RESTAURANT 1 TYPE -->
+    <TextView
+        android:id="@+id/txtRestaurant1Type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Burgers - Fast Food"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txtRestaurant1"
+        app:layout_constraintTop_toBottomOf="@id/txtRestaurant1" />
+
+    <!-- RESTAURANT 1 RATING -->
+    <TextView
+        android:id="@+id/txtRestaurant1Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="⭐ 4.7"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/txtRestaurant1"
+        app:layout_constraintTop_toBottomOf="@id/txtRestaurant1Type" />
+
+    <!-- RESTAURANT 2 IMAGE -->
+    <ImageView
+        android:id="@+id/imgRestaurant2"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Tashas restaurant"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rest1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgRestaurant1" />
+
+    <!-- RESTAURANT 2 NAME -->
+    <TextView
+        android:id="@+id/txtRestaurant2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Tashas"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgRestaurant2"
+        app:layout_constraintTop_toTopOf="@id/imgRestaurant2" />
+
+    <!-- RESTAURANT 2 TYPE -->
+    <TextView
+        android:id="@+id/txtRestaurant2Type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Cafe - Breakfast"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txtRestaurant2"
+        app:layout_constraintTop_toBottomOf="@id/txtRestaurant2" />
+
+    <!-- RESTAURANT 2 RATING -->
+    <TextView
+        android:id="@+id/txtRestaurant2Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="⭐ 4.5"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/txtRestaurant2"
+        app:layout_constraintTop_toBottomOf="@id/txtRestaurant2Type" />
+
+    <!-- RESTAURANT 3 IMAGE -->
+    <ImageView
+        android:id="@+id/imgRestaurant3"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Mamzo's restaurant"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rest1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgRestaurant2" />
+
+    <!-- RESTAURANT 3 NAME -->
+    <TextView
+        android:id="@+id/txtRestaurant3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Mamzo's"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgRestaurant3"
+        app:layout_constraintTop_toTopOf="@id/imgRestaurant3" />
+
+    <!-- RESTAURANT 3 TYPE -->
+    <TextView
+        android:id="@+id/txtRestaurant3Type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Pizza - Italian"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txtRestaurant3"
+        app:layout_constraintTop_toBottomOf="@id/txtRestaurant3" />
+
+    <!-- RESTAURANT 3 RATING -->
+    <TextView
+        android:id="@+id/txtRestaurant3Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="⭐ 4.8"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/txtRestaurant3"
+        app:layout_constraintTop_toBottomOf="@id/txtRestaurant3Type" />
+
+    <!-- BOTTOM NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
