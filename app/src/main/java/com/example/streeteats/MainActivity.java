@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Declare the views
     private BottomNavigationView navigation;
     private EditText edtSearch;
     private ImageView imgRestaurant1, imgRestaurant2, imgRestaurant3;
@@ -22,62 +20,60 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Enable edge-to-edge
         EdgeToEdge.enable(this);
-
-        // Connect Java to activity_main.xml
         setContentView(R.layout.activity_main);
 
-        // Connect the XML views to Java
         navigation = findViewById(R.id.navigation);
         edtSearch = findViewById(R.id.edtSearch);
         imgRestaurant1 = findViewById(R.id.imgCategory1);
         imgRestaurant2 = findViewById(R.id.imgCategory2);
         imgRestaurant3 = findViewById(R.id.imgCategory3);
 
-        // Set Home as the default selected item
         navigation.setSelectedItemId(R.id.nav_home);
 
+        if (imgRestaurant1 != null) {
+            imgRestaurant1.setOnClickListener(view -> {
+                Intent intent = new Intent(MainActivity.this, DetailRestaurantActivity.class);
+                intent.putExtra("EXTRA_RESTAURANT_NAME", "Pholas");
+                startActivity(intent);
+            });
+        }
 
-        imgRestaurant1.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, DetailRestaurantActivity.class);
-            startActivity(intent);
-        });
+        if (imgRestaurant2 != null) {
+            imgRestaurant2.setOnClickListener(view -> {
+                Intent intent = new Intent(MainActivity.this, DetailRestaurantActivity.class);
+                intent.putExtra("EXTRA_RESTAURANT_NAME", "Tashas");
+                startActivity(intent);
+            });
+        }
 
-        imgRestaurant2.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, DetailRestaurantActivity.class);
-            startActivity(intent);
-        });
+        if (imgRestaurant3 != null) {
+            imgRestaurant3.setOnClickListener(view -> {
+                Intent intent = new Intent(MainActivity.this, DetailRestaurantActivity.class);
+                intent.putExtra("EXTRA_RESTAURANT_NAME", "Momo");
+                startActivity(intent);
+            });
+        }
 
-        imgRestaurant3.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, DetailRestaurantActivity.class);
-            startActivity(intent);
-        });
-
-        // Handle Bottom Navigation clicks
         navigation.setOnItemSelectedListener(item -> {
-
             int itemId = item.getItemId();
 
             if (itemId == R.id.nav_home) {
-
                 return true;
 
             } else if (itemId == R.id.nav_explore) {
-
-                Intent explorepage = new Intent(MainActivity.this, ExploreActivity.class);
-
-                startActivity(explorepage);
-
+                Intent explorePage = new Intent(MainActivity.this, ExploreActivity.class);
+                explorePage.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(explorePage);
+                overridePendingTransition(0, 0);
+                return true;
 
             } else if (itemId == R.id.nav_categories) {
-
-                Toast.makeText(
-                        MainActivity.this,
-                        "Categories selected",
-                        Toast.LENGTH_SHORT
-                ).show();
-
+                Intent categoriesPage = new Intent(MainActivity.this, ResturantListActivity.class);
+                categoriesPage.putExtra("EXTRA_CATEGORY_NAME", "All");
+                categoriesPage.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(categoriesPage);
+                overridePendingTransition(0, 0);
                 return true;
             }
 
