@@ -13,11 +13,12 @@ public class ExploreActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_explore_ctivity); // Ensure this matches your XML layout name
+        setContentView(R.layout.activity_explore_ctivity);
 
         // Bind Category Clicks
         View btnBurgers = findViewById(R.id.btnBurgers);
         View btnPizza = findViewById(R.id.btnPizza);
+        View btnSushi = findViewById(R.id.btnSushi);
 
         if (btnBurgers != null) {
             btnBurgers.setOnClickListener(v -> openCategory("Burgers"));
@@ -25,6 +26,10 @@ public class ExploreActivity extends AppCompatActivity {
 
         if (btnPizza != null) {
             btnPizza.setOnClickListener(v -> openCategory("Pizza"));
+        }
+
+        if (btnSushi != null){
+            btnSushi.setOnClickListener(view -> openCategory("Sushi"));
         }
 
         // Setup Bottom Navigation Bar in Explore Screen

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView navigation;
     private EditText edtSearch;
-    private ImageView imgRestaurant1, imgRestaurant2, imgRestaurant3;
+    private ImageView imgRestaurant1, imgRestaurant2, imgRestaurant3, imgRestaurant4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
